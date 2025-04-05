@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Movie Tracker</h1>
+        <div class="search-container">
+          <input type="text" id="search" placeholder="Search movies..." />
+        </div>
+      </header>
+
+      <div class="add-movie-container">
+        <h2>Add New Movie</h2>
+        <form id="add-movie-form">
+          <div class="form-group">
+            <input
+              type="text"
+              id="movie-title"
+              placeholder="Movie title"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <input type="text" id="movie-director" placeholder="Director" />
+          </div>
+          <div class="form-group">
+            <input
+              type="number"
+              id="movie-year"
+              placeholder="Release year"
+              min="1900"
+              max="2099"
+            />
+          </div>
+          <div class="form-group">
+            <select id="movie-status">
+              <option value="unwatched">Want to Watch</option>
+              <option value="watched">Watched</option>
+            </select>
+          </div>
+          <div
+            class="form-group rating-group"
+            id="rating-container"
+            style="display: none"
+          >
+            <label>Rating:</label>
+            <div class="star-rating">
+              <span class="star" data-rating="1">★</span>
+              <span class="star" data-rating="2">★</span>
+              <span class="star" data-rating="3">★</span>
+              <span class="star" data-rating="4">★</span>
+              <span class="star" data-rating="5">★</span>
+            </div>
+            <input type="hidden" id="movie-rating" value="0" />
+          </div>
+          <button type="submit" class="btn">Add Movie</button>
+        </form>
+      </div>
+
+      <div class="filter-container">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="unwatched">
+          Want to Watch
+        </button>
+        <button class="filter-btn" data-filter="watched">Watched</button>
+      </div>
+
+      <div class="movies-container">
+        <h2>My Movies</h2>
+        <div id="movies-list" class="movies-list">
+          <!-- Movies will be added here dynamically -->
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
